@@ -3,7 +3,7 @@
 
 > Facilitating learning, using, and designing graph processing pipelines/models systematically.
 
-We present a novel framework GraphZoo, that makes learning, using, and designing graph processing pipelines/models systematic by abstraction over the redundant components. The framework contains a powerful library that supports several hyperbolic manifolds and an easy-to-use modular framework to perform graph processing tasks which aids researchers in different components, namely, (i) reproduce evaluation pipelines of state-of-the-art approaches, (ii) design new hyperbolic or Euclidean graph networks and compare them against the state-of-the art approaches on standard benchmarks, (iii) add custom datasets for evaluation, (iv) add new tasks and evaluation criteria. For more details check out our [paper](https://www2022.thewebconf.org/PaperFiles/54.pdf) and [poster]
+We present a novel framework GraphZoo, that makes learning, using, and designing graph processing pipelines/models systematic by abstraction over the redundant components. The framework contains a powerful library that supports several hyperbolic manifolds and an easy-to-use modular framework to perform graph processing tasks which aids researchers in different components, namely, (i) reproduce evaluation pipelines of state-of-the-art approaches, (ii) design new hyperbolic or Euclidean graph networks and compare them against the state-of-the art approaches on standard benchmarks, (iii) add custom datasets for evaluation, (iv) add new tasks and evaluation criteria. For more details check out our [paper](https://www2022.thewebconf.org/PaperFiles/54.pdf) and [poster](https://github.com/AnoushkaVyas/GraphZoo/blob/main/GraphZooPoster.pdf).
 
 ## Installation
 
