@@ -14,7 +14,7 @@ cd GraphZoo
 python setup.py install
 ```
 
-### Using Pypi (under development, install from source):
+### Using Pypi:
 
 ```
 pip install graphzoo
@@ -24,7 +24,7 @@ pip install graphzoo
 
 To train a Hyperbolic Graph Convolutional Networks model for node classification task on Cora dataset, make use of GraphZoo APIs customized loss functions and evaluation metrics for this task.
 
-Prepare input data:
+Download data:
 
 ```python
 import graphzoo as gz
@@ -32,7 +32,14 @@ import torch
 from graphzoo.config import parser
 
 params = parser.parse_args(args=[])
+params.download_folder ='./data/'
+gz.dataloader.download_and_extract(params)
+
+Prepare input data:
+
+```python
 params.dataset='cora'
+params.task='nc'
 params.datapath='data/cora'
 data = gz.dataloader.DataLoader(params)
 ```
