@@ -54,7 +54,7 @@ config_args = {
         'use-feats': (1, 'whether to use node features (1) or not (0 in case of Shallow methods) (type: int)'),
         'normalize-feats': (1, 'whether to normalize input node features (1) or not (0) (type: int)'),
         'normalize-adj': (1, 'whether to row-normalize the adjacency matrix (1) or not(0) (type: int)'),
-        'split-seed': (1234, 'seed for data splits (train/test/val) (type: int)'),
+        'split-seed': (1234, 'seed for data splits (train/test/val) (type: int)')
     }
 }
 
