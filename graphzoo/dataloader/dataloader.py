@@ -51,7 +51,6 @@ def DataLoader(args):
         data['features'] = augment(data['adj_train'], data['features'])
 
     args.n_nodes, args.feat_dim = data['features'].shape
-    args.device = 'cuda:' + str(args.cuda) if int(args.cuda) >= 0 else 'cpu'    
     return data
 
 # ############### LINK PREDICTION DATA LOADERS ####################################
