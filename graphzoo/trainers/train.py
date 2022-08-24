@@ -17,7 +17,7 @@ from graphzoo.config import parser
 from graphzoo.models.base_models import NCModel, LPModel
 from graphzoo.utils.train_utils import get_dir_name, format_metrics
 from graphzoo.dataloader.dataloader import DataLoader
-from graphzoo.dataloader.dataloader import download_and_extract
+from graphzoo.dataloader.download import download_and_extract
 
 class Trainer:
     """
