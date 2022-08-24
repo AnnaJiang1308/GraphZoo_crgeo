@@ -34,7 +34,7 @@ from graphzoo.config import parser
 params = parser.parse_args(args=[])
 params.download_folder ='./data/'
 gz.dataloader.download_and_extract(params)
-
+```
 Prepare input data:
 
 ```python
