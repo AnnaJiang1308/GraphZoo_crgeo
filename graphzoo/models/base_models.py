@@ -46,7 +46,7 @@ class BaseModel(nn.Module):
         if args.c is not None:
             self.c = torch.tensor([args.c])
             if not args.cuda == -1:
-                self.c = self.c.to(args.device)
+                self.c = self.c.to('cuda:' + str(args.cuda))
         else:
             self.c = nn.Parameter(torch.Tensor([1.]))
         self.manifold = getattr(manifolds, self.manifold_name)()
@@ -90,7 +90,7 @@ class NCModel(BaseModel):
         self.weights = torch.Tensor([1.] * args.n_classes)
         
         if not args.cuda == -1:
-            self.weights = self.weights.to(args.device)
+            self.weights = self.weights.to('cuda:' + str(args.cuda))
 
     def decode(self, h, adj, idx):
         output = self.decoder.decode(h, adj)
