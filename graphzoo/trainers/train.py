@@ -72,6 +72,12 @@ class Trainer:
 
         if int(self.args.cuda) >= 0:
             torch.cuda.manual_seed(self.args.seed)
+            
+        if args.cuda is None:
+            device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+
+        else:
+            device = 'cuda:' + str(args.cuda) if int(args.cuda) >= 0 else 'cpu'    
     
         logging.getLogger().setLevel(logging.INFO)
         if self.args.save:
@@ -88,7 +94,7 @@ class Trainer:
                                     logging.StreamHandler()
                                 ])
 
-        logging.info(f'Using: {self.args.device}')
+        logging.info(f'Using: {device}')
         logging.info("Using seed {}.".format(self.args.seed))
 
         if not self.args.lr_reduce_freq:
@@ -105,10 +111,10 @@ class Trainer:
         logging.info(f"Total number of parameters: {tot_params}")
         if self.args.cuda is not None and int(self.args.cuda) >= 0 :
             os.environ['CUDA_VISIBLE_DEVICES'] = str(self.args.cuda)
-            self.model = self.model.to(self.args.device)
+            self.model = self.model.to(device)
             for x, val in self.data.items():
                 if torch.is_tensor(self.data[x]):
-                    self.data[x] = self.data[x].to(self.args.device)
+                    self.data[x] = self.data[x].to(device)
   
     def run(self):
         """
