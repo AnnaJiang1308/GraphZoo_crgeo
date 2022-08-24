@@ -226,7 +226,7 @@ The included datasets are the following and they need to be downloaded from the 
 
 ## Package References
 
-[Tutorials](https://github.com/AnoushkaVyas/GraphZoo/tree/main/tutorials) (jupyter notebooks under development)
+[Tutorials](https://github.com/AnoushkaVyas/GraphZoo/tree/main/tutorials) 
 
 [Documentation](https://github.com/AnoushkaVyas/GraphZoo#customizing-input-arguments)
 
