@@ -240,8 +240,6 @@ Some of the code was forked from the following repositories.
 - [pyGAT](https://github.com/Diego999/pyGAT)
 - [poincare-embeddings](https://github.com/facebookresearch/poincare-embeddings)
 
-## Model References
-
 ## Citation
 If you use GraphZooZoo in your research, please use the following BibTex entry.
 
