@@ -216,7 +216,7 @@ data = {'adj_train': adj_train, 'features': features, ‘train_edges’: train_e
 ### Adding Custom Models
 
 1. After adding custom layers, custom models can be added in `models/encoders.py` in the source code by adding a class in the file.
-2. After adding custom layers, custom decoders to calculate the final output can be added in `models/decoders.py` in the source code by adding a class in the file. Default decoder is the `LinearDecoder`.
+2. After adding custom layers, custom decoders to calculate the final output can be added in `models/decoders.py` in the source code by adding a class in the file. 
 
 ## Datasets 
 
