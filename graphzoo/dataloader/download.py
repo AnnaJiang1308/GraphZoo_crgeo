@@ -32,7 +32,7 @@ def download_and_extract(args):
     Input Parameters
     ----------
         'dataset': (None, 'which dataset to use, can be any of [cora, pubmed, airport, disease_nc, disease_lp] (type: str)')
-        'datapath': (None, 'path to raw data (type: str)')
+        'download_folder': (None, 'path to the folder for raw data (type: str)')
 
     API Input Parameters
     ----------
@@ -40,11 +40,11 @@ def download_and_extract(args):
     
     """
     
-    if not args.datapath:
+    if not args.download_folder:
         path = os.path.join(os.getcwd()+'/data/')
         
     else:
-        path = args.datapath
+        path = args.download_folder
         
     filename = args.dataset+'.zip'
 
