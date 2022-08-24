@@ -47,7 +47,6 @@ data = gz.dataloader.DataLoader(params)
 Initialize the model and fine-tune the hyperparameters:
 
 ```python
-params.task='nc'
 params.model='HGCN'
 params.manifold='PoincareBall'
 params.dim=128
