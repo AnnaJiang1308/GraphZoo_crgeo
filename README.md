@@ -203,6 +203,9 @@ The included datasets are the following and they need to be downloaded from the 
 2. Pubmed
 3. Disease
 4. Airport
+5. PPI
+6. Webpk
+7. Citeseer
 
 ## Models
 
