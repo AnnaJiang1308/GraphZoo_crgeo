@@ -202,12 +202,12 @@ if __name__ == '__main__':
     """
     args = parser.parse_args()
     result_list=[]
+    
+    args = parser.parse_args()
+        
+    data=DataLoader(args)
 
     for i in range(args.repeat):
-        
-        args = parser.parse_args()
-        
-        data=DataLoader(args)
         
         if args.task=='nc':
             model=NCModel(args)
