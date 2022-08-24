@@ -19,24 +19,21 @@ class BaseModel(nn.Module):
 
     Input Parameters
     ----------
-        'task': ('nc', 'which tasks to train on, can be any of [lp, nc] (type: str)')
-        'model': ('HGCN', 'which encoder to use, can be any of [Shallow, MLP, HNN, GCN, GAT, HGCN, HGAT] (type: str)')
-        'dim': (128, 'embedding dimension (type: int)')
-        'manifold': ('PoincareBall', 'which manifold to use, can be any of [Euclidean, Hyperboloid, PoincareBall] (type: str)')
-        'c': (1.0, 'hyperbolic radius, set to None for trainable curvature (type: float)')
-        'r': (2.0, 'fermi-dirac decoder parameter for lp (type: float)')
-        't': (1.0, 'fermi-dirac decoder parameter for lp (type: float)')
-        'pretrained-embeddings': (None, 'path to pretrained embeddings (.npy file) for Shallow node classification (type: str)')
-        'num-layers': (2, 'number of hidden layers in encoder (type: int)')
-        'bias': (1, 'whether to use bias (1) or not (0) (type: int)')
-        'act': ('relu', 'which activation function to use or None for no activation (type: str)')
-        'n-heads': (4, 'number of attention heads for graph attention networks, must be a divisor dim (type: int)')
-        'alpha': (0.2, 'alpha for leakyrelu in graph attention networks (type: float)')
-        'use-att': (0, 'whether to use hyperbolic attention (1) or not (0) (type: int)')
+        'task': ('nc', 'which tasks to train on, can be any of [lp, nc] (type: str)'),
+        'model': ('HGCN', 'which encoder to use, can be any of [Shallow, MLP, HNN, GCN, GAT, HGCN,HGAT] (type: str)'),
+        'dim': (128, 'embedding dimension (type: int)'),
+        'manifold': ('PoincareBall', 'which manifold to use, can be any of [Euclidean, Hyperboloid, PoincareBall] (type: str)'),
+        'c': (1.0, 'hyperbolic radius, set to None for trainable curvature (type: float)'),
+        'r': (2.0, 'fermi-dirac decoder parameter for lp (type: float)'),
+        't': (1.0, 'fermi-dirac decoder parameter for lp (type: float)'),
+        'pretrained-embeddings': (None, 'path to pretrained embeddings (.npy file) for Shallow node classification (type: str)'),
+        'num-layers': (2, 'number of hidden layers in encoder (type: int)'),
+        'bias': (1, 'whether to use bias (1) or not (0) (type: int)'),
+        'act': ('relu', 'which activation function to use or None for no activation (type: str)'),
+        'n-heads': (4, 'number of attention heads for graph attention networks, must be a divisor dim (type: int)'),
+        'alpha': (0.2, 'alpha for leakyrelu in graph attention networks (type: float)'),
+        'use-att': (0, 'whether to use hyperbolic attention (1) or not (0) (type: int)'),
         'local-agg': (0, 'whether to local tangent space aggregation (1) or not (0) (type: int)')
-        'n_classes': (7, 'number of classes in the dataset (type: int)')
-        'n_nodes': (2708, 'number of nodes in the graph (type: int)')
-        'feat_dim': (1433, 'feature dimension of the dataset (type: int)') 
         
     API Input Parameters
     ----------
