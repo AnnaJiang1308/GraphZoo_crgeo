@@ -59,6 +59,8 @@ def DataLoader(args):
 def load_data_lp(dataset, use_feats, data_path):
     if dataset in ['cora', 'citeseer', 'pubmed']:
         adj, features = load_citation_data(dataset, use_feats, data_path)[:2]
+    elif dataset == 'crgeo':
+        adj, features = load_data_crgeo(dataset, data_path, return_label=False)    
     elif dataset == 'ppi':
         adj, features = load_ppi_data(data_path)[:2]
     elif dataset == 'webkb':
@@ -67,8 +69,10 @@ def load_data_lp(dataset, use_feats, data_path):
         adj, features = load_synthetic_data(dataset, use_feats, data_path)[:2]
     elif dataset == 'airport':
         adj, features = load_data_airport(dataset, data_path, return_label=False)
+    elif dataset == 'crgeo':
+        adj, features = load_data_crgeo(dataset, data_path, return_label=False)
     else:
-        raise FileNotFoundError('Dataset {} is not supported.'.format(dataset))
+        raise FileNotFoundError('Dataset {} is not supported1111.'.format(dataset))
     data = {'adj_train': adj, 'features': features}
     return data
 
@@ -94,6 +98,9 @@ def load_data_nc(dataset, use_feats, data_path, split_seed):
             val_prop, test_prop = 0.10, 0.60
         elif dataset == 'airport':
             adj, features, labels = load_data_airport(dataset, data_path, return_label=True)
+            val_prop, test_prop = 0.15, 0.15
+        elif dataset == 'crgeo':
+            adj, features, labels = load_data_crgeo(dataset, data_path, return_label=True)
             val_prop, test_prop = 0.15, 0.15
         else:
             raise FileNotFoundError('Dataset {} is not supported.'.format(dataset))
@@ -307,7 +314,21 @@ def load_synthetic_data(dataset_str, use_feats, data_path):
 
 
 def load_data_airport(dataset_str, data_path, return_label=False):
-    graph = pkl.load(open(os.path.join(data_path, dataset_str + '.p'), 'rb'))
+    graph = pkl.load(open(os.path.join(data_path,  dataset_str+'.p'), 'rb'))
+    adj = nx.adjacency_matrix(graph)
+    features = np.array([graph.nodes[u]['feat'] for u in graph.nodes()])
+    if return_label:
+        label_idx = 4
+        labels = features[:, label_idx]
+        features = features[:, :label_idx]
+        labels = bin_feat(labels, bins=[7.0/7, 8.0/7, 9.0/7])
+        return sp.csr_matrix(adj), features, labels
+    else:
+        return sp.csr_matrix(adj), features
+    
+    
+def load_data_crgeo(dataset_str, data_path, return_label=False):
+    graph = pkl.load(open(os.path.join(data_path,  'DEU_Munich_1-1LaneletGraph_graph.p'), 'rb'))
     adj = nx.adjacency_matrix(graph)
     features = np.array([graph.nodes[u]['feat'] for u in graph.nodes()])
     if return_label:
